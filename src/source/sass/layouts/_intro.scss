@@ -1,0 +1,57 @@
+.intro{
+    background-image: url(../img/background.png);
+    height: 100%;
+    &__wrap{
+        padding-top: 50px;
+    }
+    &__title{
+        display: inline-block;
+        margin: 10px 0 35px;
+        text-transform: uppercase;
+        font-size: 90px;
+        font-weight: bold;
+        line-height: 0.9em;
+        span{
+            color: $main;
+        }
+    }
+    &__description{
+        width: 99%;
+        font-family: $font-family-p;
+        font-size: 20px;
+    }
+    &__form{
+        height: 520px;
+        width: 400px;
+        background: $main;
+        padding: 25px 25px;
+        border-radius: 5px;
+        &__name{
+            margin-bottom: 30px;
+            align-self: center;
+        }
+        label{
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 22px;
+        }
+        &__input{
+            padding: 0 20px;
+            font-family: $font-family-p;
+            font-size: 20px;
+            height: 55px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        &__button{
+            background: black;
+            color: #fff;
+            height: 55px;
+            width: 350px;
+            border: none;
+            border-radius: 5px;
+            align-self: center;
+        }
+    }
+}

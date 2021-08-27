@@ -9,15 +9,15 @@
 
 
   @include point(lg-def) {
-    width: 990px;
-    padding-left : 30px;
-    padding-right: 30px;
+    width: 1010px;
+    padding-left : 15px;
+    padding-right: 0;
   }
 
   @include point(def-md) {
     width: 750px;
-    padding-left : 30px;
-    padding-right: 30px;
+    padding-left : 0;
+    padding-right: 0;
   }
 
   @include point(md-sm) {

@@ -25,7 +25,6 @@ const js_build = build + 'js/';
 const html_build = build + 'html/';
 const sprite_build = build + 'img/';
 
-
 function html(done) {
     gulp.src(html_source+'*.html')
         .pipe(fileInclude())
@@ -34,7 +33,6 @@ function html(done) {
         .pipe(reload({stream: true}));
         done();
 }
-
 function js_libs(done) {
     gulp.src(js_source+'lib/*.js')
         .pipe(order([
@@ -50,7 +48,6 @@ function js_libs(done) {
         .pipe(gulp.dest(js_build));
         done();
 }
-
 function js_index(done) {
     gulp.src(js_source+'index.js')
         .pipe(gulp.dest(js_build))
@@ -61,12 +58,11 @@ function js_index(done) {
         .pipe(gulp.dest(js_build));
     done();
 }
-
 function sass_style(done) {
     gulp.src(sass_source+'**/*.+(sass|scss)')
         .pipe(sourcemaps.init())
         .pipe(sass().on("error", notify.onError()))
-        .pipe(autoprefixer(['last 20 versions', '> 1%', 'ie > 8']))
+        .pipe(autoprefixer(['last 20 versions', '> 1%', 'ie > 10']))
         .pipe(rename(function (path) {
             path.extname = ".css"
         }))
@@ -81,7 +77,6 @@ function sass_style(done) {
         .pipe(reload({stream: true}));
     done();
 }
-
 function sprite(done) {
     gulp.src(sprite_source+'*.svg')
         .pipe(svgSprite({
@@ -98,13 +93,12 @@ function sprite(done) {
         .pipe(gulp.dest(sprite_build));
     done();
 }
-
 function watch(done){
     const js_index_watcher = gulp.watch([js_source + 'index.js']);
     const js_libs_watcher = gulp.watch([js_source + 'lib/*.js']);
     const sprite_watcher = gulp.watch([sprite_source + '*.svg']);
-    const html_watcher = gulp.watch([html_source + '*.html']);
-    const sass_watcher = gulp.watch([sprite_source + '*.svg']);
+    const html_watcher = gulp.watch([html_source + '**/*.html']);
+    const sass_watcher = gulp.watch([sass_source+'**/*.(sass|scss)']);
 
     js_index_watcher.on('change', function(path, stats) {
         console.log(`File ${path} was changed`);

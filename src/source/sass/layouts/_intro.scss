@@ -1,9 +1,18 @@
 .intro{
-    background-image: url(../img/background.png);
-    height: 100%;
     &__wrap{
         padding-top: 50px;
+        &__box{
+            max-width: 48%;
+            @include point(def-down){
+                max-width: 90%;
+            }
+        }
+        @include point(def-down){
+            flex-direction: column;
+            align-items: center;
+        }
     }
+    
     &__title{
         display: inline-block;
         margin: 10px 0 35px;
@@ -14,11 +23,27 @@
         span{
             color: $main;
         }
+        @include point(def-md){
+            margin: 30px;
+            font-size: 80px;
+        }
+        @include point(md-down){
+            margin: 0;
+            font-size: 55px;
+        }
     }
+    
     &__description{
         width: 99%;
         font-family: $font-family-p;
         font-size: 20px;
+        @include point(def-md){
+            margin: 30px;
+        }
+        @include point(md-down){
+            margin: 30px 0;
+
+        }
     }
     &__form{
         height: 520px;
@@ -27,13 +52,11 @@
         padding: 25px 25px;
         border-radius: 5px;
         &__name{
-            margin-bottom: 30px;
-            align-self: center;
-        }
-        label{
             text-transform: uppercase;
             color: #fff;
             font-size: 22px;
+            margin-bottom: 30px;
+            align-self: center;
         }
         &__input{
             padding: 0 20px;
@@ -47,11 +70,80 @@
         &__button{
             background: black;
             color: #fff;
+            font-size: 22px;
             height: 55px;
             width: 350px;
             border: none;
             border-radius: 5px;
             align-self: center;
+            transition: background-color .3s, border 0,9s;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.7);
+                border: 1px solid #fff;
+            }
         }
+        
+    }
+}
+.form__radio input[type=radio] {
+	display: none;
+}
+.radio{
+    margin: 25px 0;
+    color: #fff;
+    padding-left: 25px;
+    display: inline-block;
+    width: 49%;
+    font-family: $font-family-p;
+    font-size: 17px !important;
+    cursor: pointer;
+    position: relative;
+    span{
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        background: #fff;
+        transition: background-color 0.3s, border 0.1s;
+    }
+}
+.form__radio input[type=radio]:checked + span {
+	background-color : #000;
+    border: 3px solid #fff;
+}
+
+.form__checkbox {
+    input[type=checkbox]{
+        display: none;
+    }
+    font-size: 17px !important;
+    font-family: $font-family-p;
+    padding-left: 25px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 25px;
+    cursor: pointer;
+    span{
+        border-radius: 2px;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        background: #fff;
+        img{
+            display: none;
+            width: 15px;
+            height: 15px;
+            margin: 2px;
+            object-position: center center;
+            transition: display .3s;
+        }
+    }
+    
+}
+.form__checkbox input[type=checkbox]:checked + span {
+	img{
+        display: block;
     }
 }

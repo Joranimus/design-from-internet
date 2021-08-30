@@ -12,14 +12,26 @@
     <script type="application/javascript" src="../js/index.min.js"></script>
 </head>
 <body>
-    <header>
-
+    <div class="background">
+        <header class="header">
+    <div class="container _f _j-between _i-center">
+        <a href="#"><img src="../img/logo.png" alt=""></a>
+        <nav class="menu _f _i-center">
+            <a href="#" class="_tdn">home</a>
+            <a href="#" class="_tdn">about</a>
+            <a href="#" class="_tdn">servicres</a>
+            <a href="#" class="_tdn">gallery</a>
+            <a href="#" class="_tdn">contact</a>
+        </nav>
+        
+        <div class="menu__closer"><img src="../img/close.png" alt=""></div>
+    </div>
 </header>
 
-    <div class="intro">
+        <div class="intro">
     <div class="container">
         <div class="intro__wrap _f _j-between">
-            <div>
+            <div class="intro__wrap__box">
                 <div class="intro__title">
                     <span>travel is</span>
                     beautiful
@@ -28,18 +40,56 @@
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                 </div>
             </div>
-            <form action="" class="intro__form _f-column _no-shrink">
-                <label class="intro__form__name" for="">request a quote</label>
+            <form action="//" method="POST" class="intro__form _f-column _no-shrink">
+                <div class="intro__form__name" for="">request a quote</div>
                 <input class="intro__form__input" type="text" name="name" id="" placeholder="Full Name">
                 <input class="intro__form__input" type="email" name="mail" id="" placeholder="Email Adress">
                 <input class="intro__form__input" type="text" name="phone" id="" placeholder="Phone number">
-                <input type="checkbox" name="" id="">
-                <input type="radio" name="" id="">
+                <select class="select" name="country">
+                    <option></option>
+                    <option value="ua">Ukraine</option>
+                    <option value="pl">Poland</option>
+                    <option value="de">Germany</option> 
+                </select>
+                <div class="form__radio">
+                    <label class="radio">
+                        Left-handed
+                        <input type="radio" name="hand" id="left">
+                        <span class=""></span>
+                    </label>
+                    <label class="radio">
+                        Right-handed
+                        <input type="radio" name="hand" id="right">
+                        <span class=""></span>
+                    </label>    
+                </div>
+                <label class="form__checkbox">
+                    I accept the terms & conditions
+                    <input class="form__checkbox" type="checkbox" name="" id="">
+                    <span><img src="../img/check.png" alt=""></span>
+                </label>
+
+                <input class="intro__form__button button" type="submit" value="SEND">
                 
-                <input class="intro__form__button button" type="submit">
             </form>
         </div>
     </div>
 </div>
+    </div>
+
+    <div class="revew">
+    <div class="container _f _j-between">
+        <div class="testimonial">
+            <div class="title">testimonial</div>
+            <div class="block1"></div>
+            
+        </div>
+        <div class="gallery">
+
+        </div>
+    </div>
+</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/h8tFZoaY4is" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
 </body>
 </html>
